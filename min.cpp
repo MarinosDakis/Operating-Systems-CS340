@@ -11,18 +11,6 @@ using namespace std;
 // press enter to let it compile
 // type "./a.exe" to run
 
-// Difficulties:
-// thread output would overlap with other thread outputs
-// solution: pthread_join(threadid, NULL), which would wait until each thread is done doing its function
-
-// some confusion finding the correct indexes for the start/end 
-// solution: changing the end/start formula primarily in the Level3Function until the correct calculations of the bounds were found 
-
-// kept getting a warning: "warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-// solution: changed int declaration in for loops of thread creation to intptr_t, which is safer when converting int to a pointer
-// (because I use the for loop values to represent each thread based on its index, and parse it with a(void*) cast into the Level2Function & Level3Function functions
-
-
 
 // Design process:
 // Main thread contains 10000 numbers
