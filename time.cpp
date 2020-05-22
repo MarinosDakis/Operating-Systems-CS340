@@ -7,39 +7,11 @@
 #include <iostream>
 using namespace std;
 
-// How to compile: 
-// I used the Cygwin64 Terminal, although it should work on any other Terminal 
+// How to compile using Cygwin64 Terminal: 
 // Open the terminal and type g++, then drag the .cpp file onto the terminal and it should add the
 // path to the program to it
 // Then press enter and it should create a "a.exe" file
 // In the terminal type ./a.exe "command you want to test" to execute the program
-
-// Difficulties :
-// I had a problem trying to send the information through the pipe because I couldn't figure out
-// why the information wasn't saving on the other end. I tried to take your advice from the email
-// and send it through as a character array; however, that was also having an issue converting it back
-// into a double, so after a while I realized that I tried saving the information through the pipe
-// with the same variable inputting it inside, so essentially it was writing and saving to itself, and 
-// that's why it was giving me a value of 8, because that was the number of bytes representing a double.
-
-// I had another issue where my program stopped using the .tv_sec & .tv_usec commands and I
-// had a hard time understanding why the program broke out of the child.
-// I thought there might have been an issue with the imports so I deleted them and put them in again
-// and the issue was fixed.
-
-// One issue I also had was with the "start_of_child" value. When the child terminated the value of
-// start_of_child would go back to its set value of 0, so I couldn't output it at the end of the program
-// because it wouldn't save the same value of start_of_child. I tried using pointers to save it to
-// the address ouside, but it still didn't work. In the end I just outputted the value within the child's block
-// of code containing the child process. I also tried your idea of moving everything into the parent's block
-// but the value still didn't change. (I left the line commented, so you can test yourself) line 139
-
-// Lastly the issue I had was dealing with was taking the input of the user. I didn't know how to make it
-// so the program takes the input and then executes the ./time program. I asked you in class and I had to add
-// "int argc,char* argv[]" into the main function. Another issue based on inputting is that I had a hard time
-// getting my values to save after executing the execlp command. After losing my mind, I looked at the 
-// paramters that were needed for the command, and I forgot to add "NULL" as the last parameter; In the end
-// the program works as it should.
 
 int main(int argc,char* argv[]){
 
