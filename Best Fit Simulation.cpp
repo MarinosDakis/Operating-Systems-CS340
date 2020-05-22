@@ -425,7 +425,7 @@ void Stats(list <Process> &list, MemoryStorage &mem){ //start stats
 
 int main(int argc, char *argv[]){ // start main
 
-rename("a.exe", "allocator_MDakis");
+
 memoryInputString = argv[1]; //total amount of memory allowed [1MB] 
 cout << "The program is running, please choose one of the following commands:\n\n RQ [processor name] [memory requested] [type] \n RL [processor name] \n C \n STAT \n QUIT\n" << endl;
 
