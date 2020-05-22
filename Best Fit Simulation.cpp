@@ -4,6 +4,48 @@
 #include <iterator>
 using namespace std;
 
+//How to compile using Cygwin:
+//type: g++ -std=c++11 [drag .cpp file here]
+//Then: ./a.exe 1048576
+
+/*
+Thought process:
+
+I simulated a memory Storage with the inbuilt stl list in c++ along with the help of iterators  | BOTTOM | GAPS & PROCESSES | TOP |
+which uses the  "-std=c++11" extension when compiling the program.
+I used it because of some of the useful in-built features of the next() function, which
+was extremely useful when using iterators to do my comparisons between processes.
+
+I have two separate classes of Process and MemoryStorage that will keep track of their individual top and bottom values
+which signify what position their ends meet at
+
+For the memoryStorage, the bottom is always 0, whereas its top depends on the value of the inputtted byte request
+
+For Process, it also has a value to store its requested memory amount and name that will help keep track of which process is which
+For the process, its top and bottom depends on what the inputted requested memory is and based on how the process is added its values are calculated differently
+
+The main idea in figuring out whether a gap exists between processes is by comparing the top and bottom values for each Process by 1
+For example, in assuming the first process is allocated 1000 bytes of memory, we set the bottom = to 0, and its top = 999
+therefore, if the next process' bottom is not equal to the current process' top + 1, then we can assume a gap exists
+This is also how the gaps were calculated, and they were assigned their own individual tops and bottoms, hence how
+their ranges showed in the STAT function
+
+Moreover, the above idea only focuses on whether a process contains a gap in between them; for example,
+
+| BOTTOM | P1 | GAP | P2 | TOP |
+
+But I had to also check if any gap existed below the front process, and above the end process, and the
+way I would know that is whether or not the front process' bottom was equal to the main memory's bottom (i.e. 0), 
+or whether the end process' top + 1 would be equal to the Maximum allocated storage. And that is how you would know
+if there a gap at the end.
+
+Essentially that was how the functions within the program kept track of the positions of the processes and gaps
+based on the the process' top and bottom values, and for the best fit algorithm, I would combine the ideas of location
+the gaps within the Memory storage, such that the minimum allocatable spot was favored for each inputted process, as
+long as there was enough room for the process to fit, or Main memory.
+
+*/
+
 //Global Variables
 stringstream ss;
 string inputString, valuesArray[4], memoryInputString, commandName, processorName, memoryAmountString, strategyType; // to store individual sections of the input string
