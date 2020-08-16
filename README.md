@@ -1,6 +1,6 @@
 # Operating-Systems-CS340
 
-The following folders contain projects that I've completed throughout the semester for my CS340 Operating System's class:
+### The following folders contain projects that I've completed throughout the semester for my CS340 Operating System's class:
 
 The Time project involves calculating the total amount of time that a command takes to perform via a pipe.
 
