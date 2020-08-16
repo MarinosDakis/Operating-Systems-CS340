@@ -84,76 +84,76 @@ long as there was enough room for the process to fit, or Main memory.
 ### Output Example: 
 
 marin@DESKTOP-0QMPIDK ~
-$ ./allocator_MDakis 1048576                                                    
-The program is running, please choose one of the following commands:
+$ ./allocator_MDakis 1048576                                                      
+The program is running, please choose one of the following commands:  
 
- RQ [processor name] [memory requested] [type]
- RL [processor name]
- C
- STAT
- QUIT
+ RQ [processor name] [memory requested] [type]  
+ RL [processor name]  
+ C  
+ STAT  
+ QUIT  
 
-you have selected to use this much memory: 1048576
+you have selected to use this much memory: 1048576  
 
-RQ P0 262144 B
-RQ P1 262144 B
-RQ P2 262200 B
-STAT
+RQ P0 262144 B  
+RQ P1 262144 B  
+RQ P2 262200 B  
+STAT  
 
-Addresses [0 : 262143] Process P0
+Addresses [0 : 262143] Process P0  
 
-Addresses [262144 : 524287] Process P1
+Addresses [262144 : 524287] Process P1  
 
-Addresses [524288 : 786487] Process P2
+Addresses [524288 : 786487] Process P2  
 
-Addresses [786488 : END] FREE
+Addresses [786488 : END] FREE  
 
-RL P1
-P1 is going to be removed from memory
-There are now: 524232 bytes remaining
+RL P1  
+P1 is going to be removed from memory  
+There are now: 524232 bytes remaining  
 
-RQ P3 200000 B
-STAT
+RQ P3 200000 B  
+STAT  
 
-Addresses [0 : 262143] Process P0
+Addresses [0 : 262143] Process P0  
 
-Addresses [262144 : 524287] FREE
+Addresses [262144 : 524287] FREE  
 
-Addresses [524288 : 786487] Process P2
+Addresses [524288 : 786487] Process P2  
 
-Addresses [786488 : 986487] Process P3
+Addresses [786488 : 986487] Process P3  
 
-Addresses [986488 : END] FREE
+Addresses [986488 : END] FREE  
 
-RQ P4 200000 B
-STAT
+RQ P4 200000 B  
+STAT  
 
-Addresses [0 : 262143] Process P0
+Addresses [0 : 262143] Process P0  
 
-Addresses [262144 : 462143] Process P4
+Addresses [262144 : 462143] Process P4  
 
-Addresses [462144 : 524287] FREE
+Addresses [462144 : 524287] FREE  
 
-Addresses [524288 : 786487] Process P2
+Addresses [524288 : 786487] Process P2  
 
-Addresses [786488 : 986487] Process P3
+Addresses [786488 : 986487] Process P3  
 
-Addresses [986488 : END] FREE
+Addresses [986488 : END] FREE  
 
-C
-STAT
+C  
+STAT  
 
-Addresses [0 : 262143] Process P0
+Addresses [0 : 262143] Process P0  
 
-Addresses [262144 : 462143] Process P4
+Addresses [262144 : 462143] Process P4  
 
-Addresses [462144 : 724343] Process P2
+Addresses [462144 : 724343] Process P2  
 
-Addresses [724344 : 924343] Process P3
+Addresses [724344 : 924343] Process P3  
 
-Addresses [924344 : END] FREE
+Addresses [924344 : END] FREE  
 
-QUIT
-Program Terminating
+QUIT  
+Program Terminating  
 
 
