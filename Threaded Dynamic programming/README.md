@@ -1,4 +1,4 @@
-### how to compile:  
+### How to compile:  
 Using Cygwin terminal:  
 open terminal, type "g++ [drag .cpp file onto terminal to create path] -lpthread"  
 press enter to let it compile  
