@@ -62,7 +62,7 @@ The concept of determining whether a gap exists between two processes is simple 
 
 ![alt text](https://github.com/MarinosDakis/Operating-Systems-CS340/blob/master/Best%20Fit%20Simulation/gap%20diagram.png)
 
-The benefit of this approach is that if there is a case where a gap exists, then we know the start and end of each gap, and those ranges can also be showed in the STAT function.
+The benefit of this approach is that if there is a case where a gap exists, then we know the start and end of each gap, and those ranges can also be displayed in the STAT function.
 
 **THIS APPOACH CAN ONLY BE USED TO CHECK IF A GAP EXISTS BETWEEN PROCESSES**
 
