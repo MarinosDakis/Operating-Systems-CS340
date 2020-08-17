@@ -4,7 +4,7 @@ type: g++ -std=c++11 [drag .cpp file here]
 Then: ./a.exe 1048576 
 
 
-### Question provided:
+### Question Provided:
 
 Best Fit simulation.cpp:
 
@@ -46,30 +46,28 @@ Chapter 9 Programming Project - Contiguous Memory Allocation
    Remember that Compaction moves processes towards the low end of addresses and free space to the high 
    end of memory addresses. Memory addresses start at 0.
    
-### Logic of implementation:
+   
+### Logic of Implementation:
 
-I simulated a memory Storage with the inbuilt stl list in c++  | BOTTOM | GAPS & PROCESSES | TOP |  
-which uses the  "-std=c++11" extension when compiling the program.  
-I used it because of some of the useful in-built features of the next() function, which
-was extremely useful when using iterators to do my comparisons between processes.
 
-I have two separate classes of Process and MemoryStorage that will keep track of their individual top and bottom values
-which signify what position their ends meet at  
+The program utilizes the in-built list and iterator classes in c++ to make use of the next () function (from the iterator class) to aid when comparing different processes.  
 
-For the memoryStorage, the bottom is always 0, whereas its top depends on the value of the inputtted byte request  
+Moreover, the program contains two additional classes, i.e. “Process” and “MemoryStorage” that keep track of their object’s top and bottom values; the Process class also contains variables that store the Process’ name and the amount of allocated memory given to it.  
 
-For Process, it also has a value to store its requested memory amount and name that will help keep track of each process  
-For the process, its top and bottom depends on what the inputted requested memory is and based on how the process is added its values are calculated differently  
+For instance, the MemoryStorage object’s bottom is always set to 0, and the top is determined by the total about of bytes the user wants the program to use; however, in the case of the Process object, its individual top and bottom are based on its allocated memory provided by the user.   
 
-The main idea in figuring out whether a gap exists between processes is by comparing the top and bottom values for each Process by 1
-For example, in assuming the first process is allocated 1000 bytes of memory, we set the bottom = to 0, and its top = 999
-therefore, if the next process' bottom is not equal to the current process' top + 1, then we can assume a gap exists
-This is also how the gaps were calculated, and they were assigned their own individual tops and bottoms, hence how
-their ranges showed in the STAT function
 
-Moreover, the above idea only focuses on whether a process contains a gap in between them; for example,
 
-| BOTTOM | P1 | GAP | P2 | TOP |
+The concept of determining whether a gap exists between two processes is simple and is best conveyed with an example:  
+
+![alt text](https://github.com/MarinosDakis/Operating-Systems-CS340/blob/master/Best%20Fit%20Simulation/gap%20diagram.png)
+
+The benefit of this approach is that if there is a case where a gap exists, then we know the start and end of each gap, and those ranges can also be showed in the STAT function.
+
+THIS APPOACH CAN ONLY BE USED TO CHECK IF A GAP EXISTS BETWEEN PROCESSES
+
+____________________________________________________________________________
+
 
 But I had to also check if any gap existed below the front process, and above the end process, and the
 way I would know that is whether or not the front process' bottom was equal to the main memory's bottom (i.e. 0), 
@@ -81,7 +79,7 @@ based on the the process' top and bottom values, and for the best fit algorithm,
 the gaps within the Memory storage, such that the minimum allocatable spot was favored for each inputted process, as
 long as there was enough room for the process to fit, or Main memory.
 
-### Output Example: 
+### Sample Output: 
 
 marin@DESKTOP-0QMPIDK ~
 $ ./allocator_MDakis 1048576                                                      
