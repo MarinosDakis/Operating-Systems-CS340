@@ -64,20 +64,18 @@ The concept of determining whether a gap exists between two processes is simple 
 
 The benefit of this approach is that if there is a case where a gap exists, then we know the start and end of each gap, and those ranges can also be showed in the STAT function.
 
-THIS APPOACH CAN ONLY BE USED TO CHECK IF A GAP EXISTS BETWEEN PROCESSES
+**THIS APPOACH CAN ONLY BE USED TO CHECK IF A GAP EXISTS BETWEEN PROCESSES**
 
-____________________________________________________________________________
+__________________________________________________________________________________________________________________
 
+To check whether gaps existed below the front process and above the back process a different approach was required.  
+Once again a diagram will be used to describe the concept: 
 
-But I had to also check if any gap existed below the front process, and above the end process, and the
-way I would know that is whether or not the front process' bottom was equal to the main memory's bottom (i.e. 0), 
-or whether the end process' top + 1 would be equal to the Maximum allocated storage. And that is how you would know
-if there a gap at the end.
+![alt text](https://github.com/MarinosDakis/Operating-Systems-CS340/blob/master/Best%20Fit%20Simulation/front%20and%20back%20gap%20diagram.png)
 
-Essentially that was how the functions within the program kept track of the positions of the processes and gaps
-based on the the process' top and bottom values, and for the best fit algorithm, I would combine the ideas of location
-the gaps within the Memory storage, such that the minimum allocatable spot was favored for each inputted process, as
-long as there was enough room for the process to fit, or Main memory.
+__________________________________________________________________________________________________________________
+
+Essentially these concepts of gap tracking were used within functions in the program to apply the best fit algorithm with respect to the allocated byte size, such that the minimum allocatable memory location was favored for each new inputted process (if there was were sufficient bytes available).  
 
 ### Sample Output: 
 
